@@ -1,0 +1,197 @@
+[10:05 AM, 7/23/2020] Revanth: Q1:
+<!DOCTYPE HTML>  
+<html>  
+    <head>  
+        <title>  
+            WEBPAGE 
+        </title> 
+    </head>  
+      
+    <body style = "text-align:center;"> 
+           
+        <h1 style = "color:green;" >  
+              CLICK BELOW TO CHANGE THE BACKGROUND COLOR
+        </h1>  
+          
+        <p id = "GFG_UP" style = 
+            "font-size: 16px; font-weight: bold;">      
+        </p> 
+          
+        <button onclick = "gfg_Run()">  
+            Click here 
+        </button> 
+          
+        <p id = "GFG_DOWN" style = 
+            "color:green; font-size: 20px; font-weight: bold;"> 
+        </p> 
+          
+        <script> 
+            var el_up = document.getElementById("GFG_UP"); 
+            var el_down = document.getElementById("GFG_DOWN"); 
+            // var str = "Click on button to change the background color"; 
+          
+            // el_up.innerHTML = str; 
+          
+            function changeColor(color) { 
+                document.body.style.background = color; 
+            } 
+              
+            function gfg_Run() { 
+                changeColor('yellow'); 
+                el_down.innerHTML = "Background Color changed"; 
+            }          
+        </script>  
+    </body>  
+</html> 
+
+
+
+
+
+Q2:
+
+<html>
+<head>
+<style>
+body {
+background: #F4F4F4;
+font-family: Arial;
+margin: 0;
+}
+</style>
+</head>
+<body>
+<table border="0" style="margin: 0 auto; width:500px">
+    <tr>
+        <td colspan="2"><h2>Print Multiplication Table using JavaScript</h2></td>
+    </tr>
+ 
+    <tr>
+        <td width="28%">Enter a Number : </td>
+        <td><input type="number" onchange="printTable(this)"></td>
+    </tr>
+    <tr>
+        <td colspan="2"><span id="mul"></span></td>
+    </tr>
+</table>
+ 
+<script>
+function printTable(num) {
+    var input = num.value;
+    if(!isNaN(input)) {
+        var table="";
+        var number="";
+        for(i=1;i<=25;i++) {
+            number = input * i;
+            table +=  input + " x " + i + " = " + number + "<br/>";
+        }
+        document.getElementById("mul").innerHTML = table;
+    }
+    else {
+        document.getElementById("mul").innerHTML = "Please Enter a valid Number";
+    }
+}
+</script>
+</body>
+</html> 
+
+
+Q3:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+          padding: 25px;
+          background-color: white;
+          color: black;
+          font-size: 25px;
+        }
+        
+        .dark-mode {
+          background-color: black;
+          color: white;
+        }
+    </style>
+    <title> WEBPAGE </title>
+    <script src = "scripts/index.js"></script>
+    <script>
+        function startTime() {
+           var today = new Date();
+           var h = today.getHours();
+           var m = today.getMinutes();
+           var s = today.getSeconds();
+           m = checkTime(m);
+           s = checkTime(s);
+           document.getElementById('txt').innerHTML =
+           h + ":" + m + ":" + s;
+           var t = setTimeout(startTime, 500);
+        }
+       function checkTime(i) {
+          if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+          return i;
+        }
+    </script>
+</head>
+<body>
+    <p>
+        WELCOME TO THE WEBPAGE
+    </p>
+</body>
+<body onload="startTime()">
+
+    <div id="txt"></div>
+    
+</body>
+</html>
+
+
+UNDER SCRIPTS FOLDER CREATE FILE INDEX FILE:
+// alert("Click me First!!");
+console.log("Hey You!");
+var customerName = prompt("Please enter your name");
+
+if (customerName!= null) {
+
+  document.getElementById("welcome").innerHTML =  "Hello " + customerName + "! How are you today?";
+
+}
+
+
+TOGGLE.HTML:
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  padding: 25px;
+  background-color: white;
+  color: black;
+  font-size: 25px;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<h2>Toggle Dark/Light Mode</h2>
+<p>Click the button to toggle between dark and light mode for this page.</p>
+
+<button onclick="myFunction()">Toggle dark mode</button>
+
+<script>
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+</script>
+
+</body>
+</html>
